@@ -3,7 +3,6 @@ package test.model;
 import catboost.deserializer.jsondeserializer.JsonModelDeserializer;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
-import test.Model;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -83,25 +82,16 @@ public class JsonReader {
         System.out.println("DocId\tRawFormulaVal");
         BufferedWriter writer = new BufferedWriter(new FileWriter(new File("/tmp/o.tsv")));
         JsonObject jsonObject = new JsonReader().read("/home/paras.mal/Documents/office/catboost/catboost/app/m2.json");
-        Model model = Model.build(jsonObject);
+
         catboost.model.Model m = new JsonModelDeserializer().deserialize(jsonObject,getFM());
         int i = 0;
         List<Map<String,String>> ll = getInput();
         long t1 = System.currentTimeMillis();
         for(Map<String,String> map : ll) {
             if(i < 87000) {
-                Double total = 0.0;
-                /*for (TreeNode node : model.getRoots()) {
-                    Double d = new EvaluateTree().evaluate(map, model, node);
-                    total += d;
-                }*/
-              //  System.out.println("\n\n\n\n");
                 double t = m.predict(map);
-                total = t;
-               // writer.write(i + "\t" + total + "\t" + t + "\n");
-               // System.out.println(" " + i + " " + total + " " + t + " " + r.get(i));
-                if ((Math.abs(r.get(i) - total) > .000001) || (Math.abs(r.get(i) - t) > .000001)) {
-                    System.out.println("error in " + i + " " + total + " " + t + " " + r.get(i));
+                if ((Math.abs(r.get(i) - t) > .000001)) {
+                    System.out.println("error in " + i  + " " + t + " " + r.get(i));
                 }
                 if ((i % 1000) == 0) {
                     System.out.println("i = " + i + " " + (System.currentTimeMillis() - t1));
@@ -114,6 +104,6 @@ public class JsonReader {
         writer.flush();
         writer.close();
 
-        System.out.println(model);
+
     }
 }

@@ -18,7 +18,7 @@ public class TreeSerializer {
     public List<TreeNode> deserialize(JsonArray jsonArray, Map<Integer,Condition> conditionMap){
 
         List<TreeNode> nodes = new ArrayList<TreeNode>();
-        for(int i = 0;i<jsonArray.size() && i<800;i++){
+        for(int i = 0;i<jsonArray.size() ;i++){
             nodes.add(deserialize(jsonArray.get(i).getAsJsonObject(), 0, 0, conditionMap, i));
 
         }

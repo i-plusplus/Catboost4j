@@ -35,14 +35,11 @@ public class TreeNode {
 
     public double compute(Map<String,String> input) {
         if(isLeaf){
-          //  System.out.println(leafIndex);
             return leafValue;
         }
         if(condition.isLeft(input)){
-           // System.out.print("right ");
             return right.compute(input);
         }else{
-           // System.out.print("left ");
             return left.compute(input);
         }
     }

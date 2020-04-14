@@ -2,46 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f7b0e8c-2e39-4517-9758-f7456fe3f123" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/catboost/condition/BorderCategoricalCondition.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/catboost/deserializer/jsondeserializer/CTRDataDeserializer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/catboost/condition/CategoricalCondition.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/catboost/features/CategoricalFeatureComponent.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/catboost/beans/CategoricalStats.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/catboost/condition/Condition.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/catboost/deserializer/jsondeserializer/ConditionSerializer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/catboost/condition/CountCategoricalCondition.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/catboost/features/Feature.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/catboost/features/FeatureComponent.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/catboost/deserializer/jsondeserializer/FeatureComponentDeserializer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/catboost/deserializer/jsondeserializer/FeatureDeserializer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/catboost/condition/FloatCondition.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/catboost/features/FloatFeatureComponent.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/catboost/deserializer/jsondeserializer/JsonModelDeserializer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/catboost/model/Model.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/catboost/condition/OneHotCondition.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/catboost/features/OneHotFeatureComponent.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/catboost/tree/TreeNode.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/catboost/deserializer/jsondeserializer/TreeSerializer.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/hash/CityHash.java" afterPath="$PROJECT_DIR$/src/main/java/catboost/hash/CityHash.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/hash/HashForJson.java" afterPath="$PROJECT_DIR$/src/main/java/catboost/hash/HashCalculator.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/model/CtrData.java" afterPath="$PROJECT_DIR$/src/main/java/test/CtrData.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/model/FloatFeature.java" afterPath="$PROJECT_DIR$/src/main/java/test/FloatFeature.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/model/Model.java" afterPath="$PROJECT_DIR$/src/main/java/test/Model.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/model/ModelInfo.java" afterPath="$PROJECT_DIR$/src/main/java/test/ModelInfo.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/model/reader/JsonReader.java" afterPath="$PROJECT_DIR$/src/main/java/test/model/JsonReader.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/model/tree/Border.java" afterPath="$PROJECT_DIR$/src/main/java/test/tree/Border.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/model/tree/BorderDetails.java" afterPath="$PROJECT_DIR$/src/main/java/test/tree/BorderDetails.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/model/tree/EvaluateTree.java" afterPath="$PROJECT_DIR$/src/main/java/test/tree/EvaluateTree.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/model/tree/FeatureIndex.java" afterPath="$PROJECT_DIR$/src/main/java/test/tree/FeatureIndex.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/model/tree/FeatureKey.java" afterPath="$PROJECT_DIR$/src/main/java/test/tree/FeatureKey.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/model/tree/FeatureValue.java" afterPath="$PROJECT_DIR$/src/main/java/test/tree/FeatureValue.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/model/tree/FeatureValueComputation.java" afterPath="$PROJECT_DIR$/src/main/java/test/tree/FeatureValueComputation.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/model/tree/OblivionTree.java" afterPath="$PROJECT_DIR$/src/main/java/test/tree/OblivionTree.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/model/tree/TreeNode.java" afterPath="$PROJECT_DIR$/src/main/java/test/tree/TreeNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CatBoost4J.iml" afterPath="$PROJECT_DIR$/CatBoost4J.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/catboost/deserializer/jsondeserializer/JsonModelDeserializer.java" afterPath="$PROJECT_DIR$/src/main/java/catboost/deserializer/jsondeserializer/JsonModelDeserializer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/test/model/JsonReader.java" afterPath="$PROJECT_DIR$/src/main/java/test/model/JsonReader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/catboost/tree/TreeNode.java" afterPath="$PROJECT_DIR$/src/main/java/catboost/tree/TreeNode.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/catboost/deserializer/jsondeserializer/TreeSerializer.java" afterPath="$PROJECT_DIR$/src/main/java/catboost/deserializer/jsondeserializer/TreeSerializer.java" />
     </list>
     <ignored path="CatBoost4J.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -65,11 +29,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="JsonReader.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="JsonReader.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/test/model/JsonReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="3.4280822">
-              <caret line="100" column="17" selection-start-line="100" selection-start-column="17" selection-end-line="100" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -102,17 +66,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/catboost/tree/TreeNode.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="37" column="12" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EvaluateTree.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/test/tree/EvaluateTree.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+              <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -144,7 +98,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/catboost/deserializer/jsondeserializer/TreeSerializer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="20" column="49" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
+              <caret line="20" column="41" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#511#521#0" expanded="true" />
@@ -153,11 +107,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OblivionTree.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/test/tree/OblivionTree.java">
+      <file leaf-file-name="ConditionSerializer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/catboost/deserializer/jsondeserializer/ConditionSerializer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="19" column="49" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="49" />
+              <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JsonModelDeserializer.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/catboost/deserializer/jsondeserializer/JsonModelDeserializer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.70642203">
+              <caret line="38" column="50" selection-start-line="38" selection-start-column="50" selection-end-line="38" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -234,17 +198,17 @@
         <option value="$PROJECT_DIR$/src/main/java/catboost/beans/CategoricalStats.java" />
         <option value="$PROJECT_DIR$/src/main/java/catboost/deserializer/jsondeserializer/CTRData.java" />
         <option value="$PROJECT_DIR$/src/main/java/catboost/condition/CountCategoricalCondition.java" />
-        <option value="$PROJECT_DIR$/src/main/java/catboost/deserializer/jsondeserializer/JsonModelDeserializer.java" />
         <option value="$PROJECT_DIR$/src/main/java/catboost/deserializer/jsondeserializer/ConditionSerializer.java" />
         <option value="$PROJECT_DIR$/src/main/java/catboost/deserializer/jsondeserializer/FeatureComponentDeserializer.java" />
         <option value="$PROJECT_DIR$/src/main/java/catboost/deserializer/jsondeserializer/CTRDataDeserializer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/catboost/deserializer/jsondeserializer/TreeSerializer.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/tree/OblivionTree.java" />
-        <option value="$PROJECT_DIR$/src/main/java/catboost/tree/TreeNode.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/tree/EvaluateTree.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/reader/JsonReader.java" />
         <option value="$PROJECT_DIR$/src/main/java/test/reader/JsonReader.java" />
         <option value="$PROJECT_DIR$/src/main/java/test/model/JsonReader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/catboost/tree/TreeNode.java" />
+        <option value="$PROJECT_DIR$/src/main/java/catboost/deserializer/jsondeserializer/TreeSerializer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/catboost/deserializer/jsondeserializer/JsonModelDeserializer.java" />
       </list>
     </option>
   </component>
@@ -338,7 +302,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
+              <option name="myItemId" value="model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -364,7 +328,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
+              <option name="myItemId" value="catboost" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -391,6 +355,40 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="catboost" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CatBoost4J" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="catboost4j" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="catboost" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jsondeserializer" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1020,16 +1018,16 @@
       <workItem from="1586456944201" duration="109385000" />
       <workItem from="1586699307527" duration="3069000" />
       <workItem from="1586704061377" duration="8654000" />
-      <workItem from="1586805592725" duration="29121000" />
+      <workItem from="1586805592725" duration="29524000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="150229000" />
+    <option name="totallyTimeSpent" value="150632000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -1039,10 +1037,10 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31929046" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31929046" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26175982" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26175982" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42350334" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1072,16 +1070,16 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44235033" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44345897" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22394678" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31929046" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26231322" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.45343682" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26175982" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42350334" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
   </component>
@@ -1137,7 +1135,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/test/model/JsonReader.java</url>
-          <line>102</line>
+          <line>92</line>
           <properties />
           <option name="timeStamp" value="107" />
         </line-breakpoint>
@@ -1149,7 +1147,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/test/model/JsonReader.java</url>
-          <line>98</line>
+          <line>91</line>
           <properties />
           <option name="timeStamp" value="111" />
         </line-breakpoint>
@@ -1173,15 +1171,9 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/test/model/JsonReader.java</url>
-          <line>87</line>
+          <line>86</line>
           <properties />
           <option name="timeStamp" value="117" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/test/model/JsonReader.java</url>
-          <line>100</line>
-          <properties />
-          <option name="timeStamp" value="118" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/catboost/condition/CountCategoricalCondition.java</url>
@@ -1274,30 +1266,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/test/tree/OblivionTree.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/test/tree/BorderDetails.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="109" column="0" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/test/tree/FeatureKey.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/../../jdk1.8.0_11/src.zip!/java/nio/ByteBuffer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1397,22 +1365,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/test/ModelInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/test/tree/Border.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="33" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/catboost/features/FeatureComponent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1439,14 +1391,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/test/tree/FeatureIndex.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="35" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/catboost/features/Feature.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1465,37 +1409,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/test/tree/FeatureKey.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="e#835#836#0" expanded="false" />
-            <element signature="e#898#899#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/catboost/condition/BorderCategoricalCondition.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/test/CtrData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="23" selection-start-line="17" selection-start-column="8" selection-end-line="20" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/test/tree/FeatureValue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="41" column="18" selection-start-line="21" selection-start-column="8" selection-end-line="41" selection-end-column="18" />
           <folding />
         </state>
       </provider>
@@ -1516,46 +1433,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/test/FloatFeature.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/test/tree/TreeNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="16" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/test/Model.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="51" column="39" selection-start-line="51" selection-start-column="39" selection-end-line="51" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/test/tree/BorderDetails.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="94" column="56" selection-start-line="94" selection-start-column="56" selection-end-line="94" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/catboost/deserializer/jsondeserializer/ConditionSerializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="58" column="42" selection-start-line="58" selection-start-column="42" selection-end-line="58" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/catboost/deserializer/jsondeserializer/FeatureComponentDeserializer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1568,14 +1445,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.41269842">
           <caret line="20" column="73" selection-start-line="20" selection-start-column="73" selection-end-line="20" selection-end-column="73" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/catboost/deserializer/jsondeserializer/JsonModelDeserializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="61" selection-start-line="22" selection-start-column="61" selection-end-line="22" selection-end-column="61" />
           <folding />
         </state>
       </provider>
@@ -1595,14 +1464,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="20" column="39" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/test/tree/FeatureValueComputation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1649,25 +1510,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/catboost/deserializer/jsondeserializer/TreeSerializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="49" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#511#521#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/test/tree/OblivionTree.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="49" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/catboost/beans/CategoricalStats.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1679,26 +1521,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/test/model/JsonReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/catboost/tree/TreeNode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="37" column="12" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
+          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/test/tree/EvaluateTree.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/catboost/deserializer/jsondeserializer/TreeSerializer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <caret line="20" column="41" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#511#521#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/catboost/deserializer/jsondeserializer/ConditionSerializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/test/model/JsonReader.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/catboost/deserializer/jsondeserializer/JsonModelDeserializer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.4280822">
-          <caret line="100" column="17" selection-start-line="100" selection-start-column="17" selection-end-line="100" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.70642203">
+          <caret line="38" column="50" selection-start-line="38" selection-start-column="50" selection-end-line="38" selection-end-column="50" />
           <folding />
         </state>
       </provider>

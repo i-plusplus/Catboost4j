@@ -8,6 +8,7 @@ import catboost.tree.TreeNode;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -24,5 +25,20 @@ public class JsonModelDeserializer {
         return new Model(nodes);
 
     }
+
+    public Model deserialize(JsonObject jsonModel, List<String> floatFeatureNames, List<String> categoricalFeatureNames){
+        Map<Integer, String> featureNames = new HashMap<>();
+        int i = 0;
+        for(;i<floatFeatureNames.size();i++){
+            featureNames.put(i, floatFeatureNames.get(i));
+        }
+        int j = 0;
+        for(;j<categoricalFeatureNames.size();i++){
+            featureNames.put(i+j,categoricalFeatureNames.get(j));
+        }
+        return deserialize(jsonModel, featureNames);
+
+    }
+
 
 }
