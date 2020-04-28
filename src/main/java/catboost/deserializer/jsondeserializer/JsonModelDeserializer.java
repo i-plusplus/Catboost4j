@@ -7,6 +7,7 @@ import catboost.model.Model;
 import catboost.tree.TreeNode;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import javafx.util.Pair;
 
 import java.util.HashMap;
 import java.util.List;
@@ -22,7 +23,9 @@ public class JsonModelDeserializer {
         Map<Feature, Map<String, CategoricalStats>> map = new CTRDataDeserializer().deserilize(jsonModel.getAsJsonObject("ctr_data"), numberOfNumericalFeatures, featureNames);
         Map<Integer, Condition> conditionMap = new ConditionSerializer().serialize(jsonModel.getAsJsonObject("features_info"),featureNames,map);
         List<TreeNode> nodes = new TreeSerializer().deserialize(jsonModel.getAsJsonArray("oblivious_trees"), conditionMap);
-        return new Model(nodes);
+        Pair<Double,Double> scaleAndBias = new ScaleBiasDesieralizer().deserialize(jsonModel);
+        return new Model(nodes, scaleAndBias.getKey(), scaleAndBias.getValue());
+
 
     }
 

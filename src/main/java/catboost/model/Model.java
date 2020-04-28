@@ -12,8 +12,13 @@ public class Model {
 
     private final List<TreeNode> roots;
 
-    public Model(List<TreeNode> roots){
+    private final Double scale;
+    private final Double bias;
+    public Model(List<TreeNode> roots, Double scale, Double bias){
         this.roots = roots;
+        this.scale = scale;
+        this.bias  = bias;
+
     }
 
     public double predict(Map<String, String> input){
@@ -21,7 +26,7 @@ public class Model {
         for(TreeNode root : roots){
             result += root.compute(input);
         }
-        return result;
+        return result*scale + bias;
     }
 
 }
