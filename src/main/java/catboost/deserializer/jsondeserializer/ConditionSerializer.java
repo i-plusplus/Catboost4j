@@ -57,7 +57,11 @@ public class ConditionSerializer {
 
             JsonObject jsonObject1 = array.get(i).getAsJsonObject();
 
-            JsonArray borders = jsonObject1.getAsJsonArray("borders");
+            JsonArray borders = new JsonArray();
+            if(!jsonObject1.get("borders").isJsonNull()){
+                borders = jsonObject1.getAsJsonArray("borders");
+            }
+
             Feature key = new FeatureDeserializer().deserialize(
                     jsonObject1.get("identifier").getAsString(), numberOfNumericalFeatures, featureNames);
             Map<String, CategoricalStats> mp = hashMap.get(key);
