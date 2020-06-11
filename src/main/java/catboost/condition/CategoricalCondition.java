@@ -71,7 +71,7 @@ abstract public class CategoricalCondition implements Condition {
 
         double nodeValue = ((numenator/denominator) + getShift()) * getScale();
 
-        if(nodeValue >= getBorder()){
+        if(nodeValue > getBorder()){
             return true;
         }
         return false;
