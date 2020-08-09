@@ -10,15 +10,18 @@ import java.util.Map;
 public class CategoricalFeatureComponent implements FeatureComponent {
 
     private final String featureName;
-
-    public CategoricalFeatureComponent(String featureName){
+    private final Map<String, Long> hashes;
+    private final Long hashNotPresent;
+    public CategoricalFeatureComponent(String featureName, Map<String, Long> hashes, Long hashNotPresent){
         this.featureName = featureName;
+        this.hashes = hashes;
+        this.hashNotPresent = hashNotPresent;
     }
 
     @Override
     public long getKey(long old, Map<String, String> input) {
         String featureValue = input.get(featureName);
-        return HashCalculator.CalcHash(old, (long) (int) HashCalculator.CalcCatFeatureHash(featureValue));
+        return HashCalculator.CalcHash(old, (long) (int) HashCalculator.CalcCatFeatureHash(featureValue, hashes, hashNotPresent));
     }
 
     @Override

@@ -11,15 +11,18 @@ public class OneHotFeatureComponent implements FeatureComponent {
 
     private final String featureName;
     private final int value;
-
-    public OneHotFeatureComponent(String featureName, int value){
+    private final Map<String, Long> hashes;
+    private final long hashNotPresent;
+    public OneHotFeatureComponent(String featureName, int value, Map<String, Long> hashes, long hashNotPresent){
         this.featureName = featureName;
         this.value = value;
+        this.hashes = hashes;
+        this.hashNotPresent = hashNotPresent;
     }
     @Override
     public long getKey(long old, Map<String, String> input) {
         String featureValue = input.get(featureName);
-        int fvalue = (int) HashCalculator.CalcCatFeatureHash(featureValue);
+        int fvalue = (int) HashCalculator.CalcCatFeatureHash(featureValue, hashes, hashNotPresent);
         int h = 0;
         if(fvalue == value){
             h = 1;

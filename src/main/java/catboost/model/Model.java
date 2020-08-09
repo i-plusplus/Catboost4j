@@ -28,5 +28,13 @@ public class Model {
         }
         return result*scale + bias;
     }
+    public double predict(Map<String, String> input, int startTree, int endTree){
+        double result = 0.0;
+        for(int i = startTree;i<endTree;i++){
+            TreeNode root = roots.get(i);
+            result += root.compute(input);
+        }
+        return result*scale + bias;
+    }
 
 }

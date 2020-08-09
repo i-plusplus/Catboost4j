@@ -11,16 +11,19 @@ public class OneHotCondition implements Condition {
 
     private final String featureName;
     private final long value;
-
-    public OneHotCondition(String featureName, long value){
+    private final Map<String, Long> hashes;
+    private final Long hashNotPresent;
+    public OneHotCondition(String featureName, long value, Map<String, Long> hashes, Long hashNotPresent){
         this.featureName = featureName;
         this.value = value;
+        this.hashes = hashes;
+        this.hashNotPresent = hashNotPresent;
     }
 
     @Override
     public boolean isLeft(Map<String, String> input) {
         String featureValue = input.get(featureName);
-        int hash = (int) HashCalculator.CalcCatFeatureHash(featureValue);
+        int hash = (int) HashCalculator.CalcCatFeatureHash(featureValue, hashes, hashNotPresent);
         if(hash == value){
             return true;
         }

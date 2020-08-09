@@ -4,22 +4,47 @@ import catboost.beans.CategoricalStats;
 import catboost.condition.*;
 import catboost.features.Feature;
 import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by paras.mal on 14/4/20.
  */
 public class ConditionSerializer {
 
-    Map<Integer, Condition> serialize(JsonObject jsonObject,
+    private static class SplitDetails {
+        long value;
+        int cat_feature_index;
+        int splitIndex;
+    }
+
+    Map<Integer, Condition> serialize(JsonObject jsonObject,JsonArray obliviousTrees,
                                       Map<Integer, String> featureNames,
                                       Map<Feature, Map<String,
-                                              CategoricalStats>> hashMap){
+                                              CategoricalStats>> hashMap, Map<String, Long> hashes, Long hashNotPresent){
+
+        List<SplitDetails> splitDetailsMap = new LinkedList<>();
+        for(JsonElement t : obliviousTrees){
+            JsonObject tree  = t.getAsJsonObject();
+            if(!tree.has("splits") || tree.get("splits").isJsonNull()) {
+                continue;
+            }
+
+            JsonArray splits = tree.getAsJsonArray("splits");
+            for(JsonElement split : splits){
+                if(split.getAsJsonObject().get("split_type").getAsString().equals("OneHotFeature")){
+                    SplitDetails sd  = new SplitDetails();
+                    sd.cat_feature_index = split.getAsJsonObject().get("cat_feature_index").getAsInt();
+                    sd.value = split.getAsJsonObject().get("value").getAsLong();
+                    sd.splitIndex = split.getAsJsonObject().get("split_index").getAsInt();
+                    splitDetailsMap.add( sd);
+                }
+            }
+        }
+
         int index = 0;
-        int findex = 0;
         Map<Integer, Condition> conditionMap = new HashMap<>();
         int numberOfNumericalFeatures = jsonObject.getAsJsonArray("float_features").size();
         /*----------------------float features----------------------------------------*/
@@ -32,7 +57,6 @@ public class ConditionSerializer {
                 conditionMap.put(index, new FloatCondition(featureName, borders.get(j).getAsDouble()));
                 index++;
             }
-            findex++;
         }
         /*-----------------------------OneHotEncoding------------------------------------*/
         array = jsonObject.getAsJsonArray("categorical_features");
@@ -43,12 +67,20 @@ public class ConditionSerializer {
             String featureName = featureNames.get(flatFeatureIndex + numberOfNumericalFeatures);
             for(int j = 0;borders !=null && j<borders.size();j++){
                 long d = borders.get(j).getAsLong();
-                conditionMap.put(index, new OneHotCondition(featureName, d));
+                conditionMap.put(index, new OneHotCondition(featureName, d, hashes, hashNotPresent));
                 index++;
             }
-            if(borders!=null) {
-                findex++;
+
+        }
+
+
+        for(SplitDetails splitDetails : splitDetailsMap){
+            if(conditionMap.containsKey(splitDetails.splitIndex)){
+                continue;
             }
+            String featureName = featureNames.get(splitDetails.cat_feature_index + numberOfNumericalFeatures);
+            conditionMap.put(splitDetails.splitIndex, new OneHotCondition(featureName, splitDetails.value, hashes, hashNotPresent));
+            index++;
         }
 
         /*-----------------------------ctrs----------------------------------------------*/
@@ -63,7 +95,7 @@ public class ConditionSerializer {
             }
 
             Feature key = new FeatureDeserializer().deserialize(
-                    jsonObject1.get("identifier").getAsString(), numberOfNumericalFeatures, featureNames);
+                    jsonObject1.get("identifier").getAsString(), numberOfNumericalFeatures, featureNames, hashes, hashNotPresent);
             Map<String, CategoricalStats> mp = hashMap.get(key);
             for(int j = 0;j<borders.size();j++){
                 double d = borders.get(j).getAsDouble();
@@ -81,7 +113,6 @@ public class ConditionSerializer {
 
                 index++;
             }
-            findex++;
 
 
         }

@@ -14,17 +14,17 @@ import java.util.Map;
  * Created by paras.mal on 12/4/20.
  */
 public class FeatureDeserializer  {
-    public Feature deserialize(JsonObject json, int numberOfFloatFeatures, Map<Integer, String> featureNames) throws JsonParseException {
+    public Feature deserialize(JsonObject json, int numberOfFloatFeatures, Map<Integer, String> featureNames, Map<String, Long> hashes, Long hashNotPresent) throws JsonParseException {
         List<FeatureComponent> featureComponents = new ArrayList<>();
         JsonArray identifier = json.getAsJsonArray("identifier");
         for(int i =0;i<identifier.size();i++){
-            featureComponents.add(new FeatureComponentDeserializer().deserialize(identifier.get(i).getAsJsonObject(),numberOfFloatFeatures,featureNames));
+            featureComponents.add(new FeatureComponentDeserializer().deserialize(identifier.get(i).getAsJsonObject(),numberOfFloatFeatures,featureNames, hashes, hashNotPresent));
         }
         return new Feature(featureComponents, json.get("type").getAsString());
     }
 
-    public Feature deserialize(String json, int numberOfFloatFeatures, Map<Integer, String> featureNames) throws JsonParseException {
-        return deserialize(new Gson().fromJson(json, JsonObject.class), numberOfFloatFeatures, featureNames);
+    public Feature deserialize(String json, int numberOfFloatFeatures, Map<Integer, String> featureNames, Map<String, Long> hashes, Long hashNotPresent) throws JsonParseException {
+        return deserialize(new Gson().fromJson(json, JsonObject.class), numberOfFloatFeatures, featureNames, hashes, hashNotPresent);
     }
 
 }

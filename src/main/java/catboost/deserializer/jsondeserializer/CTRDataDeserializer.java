@@ -18,11 +18,11 @@ import java.util.Map;
 
 public class CTRDataDeserializer {
 
-    public Map<Feature, Map<String,CategoricalStats>> deserilize(JsonObject jsonObject, int numberOfNumericalFeatures, Map<Integer, String> featureNames){
+    public Map<Feature, Map<String,CategoricalStats>> deserilize(JsonObject jsonObject, int numberOfNumericalFeatures, Map<Integer, String> featureNames, Map<String, Long> hashes, Long hashNotPresent){
         Map<Feature, Map<String, CategoricalStats>> map = new HashMap<>();
 
         for(Map.Entry<String, JsonElement> entry : jsonObject.entrySet()){
-            Feature key = new FeatureDeserializer().deserialize(entry.getKey(), numberOfNumericalFeatures, featureNames);
+            Feature key = new FeatureDeserializer().deserialize(entry.getKey(), numberOfNumericalFeatures, featureNames, hashes, hashNotPresent);
             Map<String,CategoricalStats> value = new HashMap<>();
             JsonObject obj = entry.getValue().getAsJsonObject();
             double counterDenominator = 0;

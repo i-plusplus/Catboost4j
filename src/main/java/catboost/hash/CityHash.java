@@ -15,7 +15,7 @@ public class CityHash {
     static  long k2 = 0x9ae16a3b2f90404fl;
     static  long k3 = 0xc949d7c7509e6557l;
 
-    static Long UNALIGNED_LOAD64(String s){
+    static Long unalignedLOAD64(String s){
         byte b[] = s.getBytes();
         long k = (short)b[0];
         for(int i = 1;i < 8;i++){
@@ -26,7 +26,7 @@ public class CityHash {
     }
 
 
-    static  Integer UNALIGNED_LOAD32(String s){
+    static  Integer unalignedLOAD32(String s){
         byte b[] = s.getBytes();
         int k = (short)b[0];
         for(int i = 1;i < 4;i++){
@@ -35,64 +35,52 @@ public class CityHash {
 
         return k;
     }
-    public static void main(String s[]) throws Exception{
-        long l = new CityHash().CityHash64("0");
-        System.out.println("bla bla " + toBigInteger(l).toString()
-                + " " + (l & 0xffffffffl ));
-       // Long l2 = new CityHash().CityHash64("002eb78051613e5da389e15af95a4356.d2s-002eb78051613e5da389e15af95a4356.d2s-002eb78051613e5da389e15af95a4356.d2s");
-       // Long l3 = Hash128to64(new Pair<Long, Long>(l,l2));
-       // System.out.println(toBigInteger(l).toString() + " " + toBigInteger(l2).toString() + " " + toBigInteger(l3).toString());
-    }
 
-
-    static long Uint128Low64(Pair<Long,Long> x){
+    static long uint128Low64(Pair<Long, Long> x){
         return x.getKey();
     }
-    static long Uint128High64(Pair<Long,Long> x){
+    static long uint128High64(Pair<Long, Long> x){
         return x.getValue();
     }
     private static final BigInteger BI_2_64 = BigInteger.ONE.shiftLeft(64);
 
-    public static String asString(long l) {
-        return l >= 0 ? String.valueOf(l) : toBigInteger(l).toString();
-    }
 
     public static BigInteger toBigInteger(long l) {
         final BigInteger bi = BigInteger.valueOf(l);
         return l >= 0 ? bi : bi.add(BI_2_64);
     }
-    static private Long Hash128to64(Pair<Long,Long> x) {
+    static private Long hash128to64(Pair<Long, Long> x) {
         long kMul = 0x9ddfea08eb382d69l;
-        long a = (Uint128Low64(x) ^ Uint128High64(x)) * kMul;
+        long a = (uint128Low64(x) ^ uint128High64(x)) * kMul;
         a ^= (a >>> 47);
-        long b = (Uint128High64(x) ^ a) * kMul;
+        long b = (uint128High64(x) ^ a) * kMul;
         b ^= (b >>> 47);
         b *= kMul;
         return b;
     }
 
 
-    static long HashLen16(long u, long v) {
-        return Hash128to64(new Pair<Long, Long>(u, v));
+    static long hashLen16(long u, long v) {
+        return hash128to64(new Pair<Long, Long>(u, v));
     }
 
-    static long RotateByAtLeast1(long val, int shift) {
+    static long rotateByAtLeast1(long val, int shift) {
         return (val >>> shift) | (val << (64 - shift));
     }
 
-    static long ShiftMix(long val) {
+    static long shiftMix(long val) {
         return val ^ (val >>> 47);
     }
 
-    Long HashLen0to16(String s) {
+    Long hashLen0to16(String s) {
         if (s.length() > 8) {
-            Long a = UNALIGNED_LOAD64(s);
-            Long b = UNALIGNED_LOAD64(s.substring(s.length() - 8));
-            return HashLen16(a, RotateByAtLeast1(b + s.length(), s.length())) ^ b;
+            Long a = unalignedLOAD64(s);
+            Long b = unalignedLOAD64(s.substring(s.length() - 8));
+            return hashLen16(a, rotateByAtLeast1(b + s.length(), s.length())) ^ b;
         }
         if (s.length() >= 4) {
-            Long a = new Long(UNALIGNED_LOAD32(s));
-            return HashLen16(s.length() + (a << 3), UNALIGNED_LOAD32(s.substring(s.length() - 4)));
+            Long a = new Long(unalignedLOAD32(s));
+            return hashLen16(s.length() + (a << 3), unalignedLOAD32(s.substring(s.length() - 4)));
         }
         if (s.length() > 0) {
             short a = (short)s.charAt(0);
@@ -100,114 +88,114 @@ public class CityHash {
             short c = (short)s.charAt(s.length() - 1);
             int y = (int)(a) + ((int)(b) << 8);
             int z =s.length() + ((int)(c) << 2);
-            return ShiftMix(y * k2 ^ z * k3) * k2;
+            return shiftMix(y * k2 ^ z * k3) * k2;
         }
         return k2;
     }
 
-    static long Rotate(long val, int shift) {
+    static long rotate(long val, int shift) {
         return shift == 0 ? val : ((val >>> shift) | (val << (64 - shift)));
     }
 
-    static long HashLen17to32(String s) {
-        long a = UNALIGNED_LOAD64(s) * k1;
-        long b = UNALIGNED_LOAD64(s.substring(8));
-        long c = UNALIGNED_LOAD64(s.substring(s.length() - 8)) * k2;
-        long d = UNALIGNED_LOAD64(s.substring(s.length() - 16)) * k0;
-        return HashLen16(Rotate(a - b, 43) + Rotate(c, 30) + d,
-                a + Rotate(b ^ k3, 20) - c + s.length());
+    static long hashLen17to32(String s) {
+        long a = unalignedLOAD64(s) * k1;
+        long b = unalignedLOAD64(s.substring(8));
+        long c = unalignedLOAD64(s.substring(s.length() - 8)) * k2;
+        long d = unalignedLOAD64(s.substring(s.length() - 16)) * k0;
+        return hashLen16(rotate(a - b, 43) + rotate(c, 30) + d,
+                a + rotate(b ^ k3, 20) - c + s.length());
     }
 
 
-    static long HashLen33to64(String s) {
-        long z = UNALIGNED_LOAD64(s.substring(24));
-        long a = UNALIGNED_LOAD64(s) + (s.length() + UNALIGNED_LOAD64(s.substring(s.length() - 16))) * k0;
-        long b = Rotate(a + z, 52);
-        long c = Rotate(a, 37);
-        a += UNALIGNED_LOAD64(s.substring(8));
-        c += Rotate(a, 7);
-        a += UNALIGNED_LOAD64(s.substring(16));
+    static long hashLen33to64(String s) {
+        long z = unalignedLOAD64(s.substring(24));
+        long a = unalignedLOAD64(s) + (s.length() + unalignedLOAD64(s.substring(s.length() - 16))) * k0;
+        long b = rotate(a + z, 52);
+        long c = rotate(a, 37);
+        a += unalignedLOAD64(s.substring(8));
+        c += rotate(a, 7);
+        a += unalignedLOAD64(s.substring(16));
         long vf = a + z;
-        long vs = b + Rotate(a, 31) + c;
-        a = UNALIGNED_LOAD64(s.substring(16)) + UNALIGNED_LOAD64(s.substring(s.length() - 32));
-        z = UNALIGNED_LOAD64(s.substring(s.length() - 8));
-        b = Rotate(a + z, 52);
-        c = Rotate(a, 37);
-        a += UNALIGNED_LOAD64(s.substring(s.length() - 24));
-        c += Rotate(a, 7);
-        a += UNALIGNED_LOAD64(s.substring(s.length() - 16));
+        long vs = b + rotate(a, 31) + c;
+        a = unalignedLOAD64(s.substring(16)) + unalignedLOAD64(s.substring(s.length() - 32));
+        z = unalignedLOAD64(s.substring(s.length() - 8));
+        b = rotate(a + z, 52);
+        c = rotate(a, 37);
+        a += unalignedLOAD64(s.substring(s.length() - 24));
+        c += rotate(a, 7);
+        a += unalignedLOAD64(s.substring(s.length() - 16));
         long wf = a + z;
-        long ws = b + Rotate(a, 31) + c;
-        long r = ShiftMix((vf + ws) * k2 + (wf + vs) * k0);
-        return ShiftMix(r * k0 + vs) * k2;
+        long ws = b + rotate(a, 31) + c;
+        long r = shiftMix((vf + ws) * k2 + (wf + vs) * k0);
+        return shiftMix(r * k0 + vs) * k2;
     }
 
-    static Pair<Long, Long> WeakHashLen32WithSeeds(
+    static Pair<Long, Long> weakHashLen32WithSeeds(
             long w, long x, long y, long z, long a, long b) {
         a += w;
-        b = Rotate(b + a + z, 21);
+        b = rotate(b + a + z, 21);
         long c = a;
         a += x;
         a += y;
-        b += Rotate(a, 44);
+        b += rotate(a, 44);
         return new Pair<Long,Long>(a + z, b + c);
     }
 
 
-    static Pair<Long, Long> WeakHashLen32WithSeeds(
+    static Pair<Long, Long> weakHashLen32WithSeeds(
             String s, long a, long b) {
-        return WeakHashLen32WithSeeds(UNALIGNED_LOAD64(s),
-                UNALIGNED_LOAD64(s.substring(8)),
-                UNALIGNED_LOAD64(s.substring(16)),
-                UNALIGNED_LOAD64(s.substring(24)),
+        return weakHashLen32WithSeeds(unalignedLOAD64(s),
+                unalignedLOAD64(s.substring(8)),
+                unalignedLOAD64(s.substring(16)),
+                unalignedLOAD64(s.substring(24)),
                 a,
                 b);
     }
 
-    Pair<Long,Long> DoSwap(long a, long b){
+    Pair<Long,Long> doSwap(long a, long b){
         return new Pair<Long, Long>(b,a);
     }
-    long CityHash64(String s) {
+    long cityHash64(String s) {
         if (s.length() <= 32) {
             if (s.length() <= 16) {
-                return HashLen0to16(s);
+                return hashLen0to16(s);
             } else {
-                return HashLen17to32(s);
+                return hashLen17to32(s);
             }
         } else if (s.length() <= 64) {
-            return HashLen33to64(s);
+            return hashLen33to64(s);
         }
 
         // For strings over 64 bytes we catboost.hash the end first, and then as we
         // loop we keep 56 bytes of state: v, w, x, y, and z.
-        long x = UNALIGNED_LOAD64(s);
-        long y = UNALIGNED_LOAD64(s.substring(s.length() - 16)) ^ k1;
-        long z = UNALIGNED_LOAD64(s.substring(s.length() - 56)) ^ k0;
-        Pair<Long, Long> v = WeakHashLen32WithSeeds(s.substring(s.length() - 64), s.length(), y);
-        Pair<Long, Long> w = WeakHashLen32WithSeeds(s.substring(s.length() - 32), s.length() * k1, k0);
-        z += ShiftMix(v.getValue()) * k1;
-        x = Rotate(z + x, 39) * k1;
-        y = Rotate(y, 33) * k1;
+        long x = unalignedLOAD64(s);
+        long y = unalignedLOAD64(s.substring(s.length() - 16)) ^ k1;
+        long z = unalignedLOAD64(s.substring(s.length() - 56)) ^ k0;
+        Pair<Long, Long> v = weakHashLen32WithSeeds(s.substring(s.length() - 64), s.length(), y);
+        Pair<Long, Long> w = weakHashLen32WithSeeds(s.substring(s.length() - 32), s.length() * k1, k0);
+        z += shiftMix(v.getValue()) * k1;
+        x = rotate(z + x, 39) * k1;
+        y = rotate(y, 33) * k1;
 
         // Decrease len to the nearest multiple of 64, and operate on 64-byte chunks.
         int len = (s.length() - 1) & ~(63);
         do {
-            x = Rotate(x + y + v.getKey() + UNALIGNED_LOAD64(s.substring(16)), 37) * k1;
-            y = Rotate(y + v.getValue() + UNALIGNED_LOAD64(s.substring(48)), 42) * k1;
+            x = rotate(x + y + v.getKey() + unalignedLOAD64(s.substring(16)), 37) * k1;
+            y = rotate(y + v.getValue() + unalignedLOAD64(s.substring(48)), 42) * k1;
             x ^= w.getValue();
             y ^= v.getKey();
-            z = Rotate(z ^ w.getKey(), 33);
-            v = WeakHashLen32WithSeeds(s, v.getValue() * k1, x + w.getKey());
-            w = WeakHashLen32WithSeeds(s.substring(32), z + w.getValue(), y);
-            Pair<Long,Long> zx = DoSwap(z, x);
+            z = rotate(z ^ w.getKey(), 33);
+            v = weakHashLen32WithSeeds(s, v.getValue() * k1, x + w.getKey());
+            w = weakHashLen32WithSeeds(s.substring(32), z + w.getValue(), y);
+            Pair<Long,Long> zx = doSwap(z, x);
             z = zx.getKey();
             x = zx.getValue();
             s  = s.substring(64);
             len -= 64;
         } while (len != 0);
 
-        return HashLen16(HashLen16(v.getKey(), w.getKey()) + ShiftMix(y) * k1 + z,
-                HashLen16(v.getValue(), w.getValue()) + x);
+        return hashLen16(hashLen16(v.getKey(), w.getKey()) + shiftMix(y) * k1 + z,
+                hashLen16(v.getValue(), w.getValue()) + x);
 
 
   }
