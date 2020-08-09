@@ -4,11 +4,38 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>CatBoost4J</groupId>
+    <groupId>io.github.iplusplus</groupId>
     <artifactId>catboost4j</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.21</version>
+    <packaging>jar</packaging>
+
+    <name>Catboost4j</name>
+    <description>Pure Java Client library for prediction from catboost json model.</description>
+    <url>https://github.com/i-plusplus/Catboost4j</url>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Paras Malik</name>
+            <email>paras_malik_mca_iit@yahoo.com</email>
+            <organization>github</organization>
+            <organizationUrl>https://github.com/i-plusplus</organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git@github.com:i-plusplus/Catboost4j.git</connection>
+        <developerConnection>scm:git:git@github.com:i-plusplus/Catboost4j.git</developerConnection>
+        <url>git@github.com:i-plusplus/Catboost4j.git</url>
+    </scm>
+
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
